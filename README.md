@@ -1,6 +1,6 @@
 # Forager ZMK Module
 
-This is the ZMK module for [the Forager keyboard](https://github.com/carrefinho/forager).
+This is the WELL-XX test and validation fork of the ZMK module for [the Forager keyboard](https://github.com/carrefinho/forager).
 
 [ZMK Studio](https://zmk.dev/docs/features/studio) is supported and enabled by default.
 
@@ -15,8 +15,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: carrefinho                            # <---
-      url-base: https://github.com/carrefinho     # <---
+    - name: well-xx                               # <---
+      url-base: https://github.com/WELL-XX        # <---
     - name: caksoylar                             # <---
       url-base: https://github.com/caksoylar      # <---
   projects:
@@ -25,7 +25,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: forager-zmk-module                    # <---
-      remote: carrefinho                          # <---
+      remote: well-xx                             # <---
       revision: main                              # <---
     - name: zmk-rgbled-widget                     # <---
       remote: caksoylar                           # <---
@@ -39,10 +39,10 @@ Then add `forager_left` and `forager_right` shields to your `build.yaml`:
 ```yaml
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: forager_left rgbled_adapter
     snippet: studio-rpc-usb-uart
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: forager_right rgbled_adapter
 ```
 
